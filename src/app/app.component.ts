@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './_model/product';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-day1';
+
+  productsArray : Product[] =[];
+
+  addToCartAtHeader(product:Product){
+    this.productsArray.push(product)
+  }
 }

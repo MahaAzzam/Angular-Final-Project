@@ -1,0 +1,30 @@
+  <!-- Register -->
+  <div class="container">
+    <form #registerForm = "ngForm" class="login">
+        <h4 class="login__header">
+            Register An Account
+        </h4>
+        <div class="form-group " [ngClass]="{'invalid': email.invalid && email.touched  }">
+            <label for="">E-mail Address</label>
+            <input [(ngModel)]="person.email" required #email class="form-control" type="text" name="email" id="Email">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="">Password</label>
+                <input required #Password [(ngModel)]="person.password" class="form-control" type="text" name="Password" id="" >
+            </div>
+            <div class="form-group" >
+                <label for="">Re-enter Password</label>
+                <input required #repeatedPassword [(ngModel)]="person.repeatedPassword" class="form-control" type="text" name="repeatedPassword" id="">
+            </div>
+        </div>
+
+        <div class="login__remember-me">
+            <div class="add-product__actions">
+                <button href="#" class="btn btn--gray">Cancel</button>
+                <button (click)='onSubmit(registerForm)' [disabled]="registerForm.invalid" href="#" class="btn btn--primary">Register</button>
+            </div>
+        </div>
+        <a routerLink='/login' class="login__register-now">You are alredy a member?</a>
+    </form>
+</div>

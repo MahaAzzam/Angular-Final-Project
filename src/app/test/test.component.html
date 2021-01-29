@@ -1,0 +1,29 @@
+<!-- <button (click)="onButtonClicked()" [disabled]='!btnDisabled'>click</button>
+<br>
+<input type="text" (input)='onInputCahnge($event)'>
+<p>{{inputText}}</p>
+
+<input type="text" [(ngModel)]="inputText2">
+<p>{{inputText2}}</p> -->
+
+
+<button (click)="onButtonClicked()">click</button>
+<br>
+<p [ngClass]='{clicked : btnClicked == true}' [ngStyle] ='{backgroundColor:getColor()}'>button is clicked</p>
+
+
+<p [class]= "btnClicked && 'clicked'" [ngStyle] ='{backgroundColor:getColor()}'>button is clicked</p>
+
+<p *ngIf = 'btnClicked; else x'>structure</p>
+
+<ng-template #x>no structure</ng-template>
+
+<div *ngFor = "let elem of elementsArray; let i = index">
+    {{i}} name {{elem.name}} age {{elem.age}};
+    <div [ngSwitch] = "elem.age">
+        <div *ngSwitchCase = '24' >yound</div>
+        <div *ngSwitchCase = '25' >adult</div>
+        <div *ngSwitchCase = '26' >old</div>
+        <div *ngSwitchCase = '27' >older</div>
+    </div>
+</div>

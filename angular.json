@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular-day1"
+  "defaultProject": "angular-day1",
+  "cli": {
+    "analytics": false
+  }
 }
