@@ -75,6 +75,7 @@ export class AddProductComponent implements OnInit {
 
   
   deleteTag(tagId) {
+    // this.product.tags = this.product.tags.filter(p => p.id !== tagId);
     var index = this.product.tags.indexOf(tagId);
     this.product.tags.splice(index, 1);
 
